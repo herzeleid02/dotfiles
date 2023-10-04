@@ -12,6 +12,12 @@ highlight CursorLineNr term=bold cterm=NONE ctermfg=Yellow ctermbg=NONE gui=NONE
 "highlight CursorLine guibg=NONE ctermbg=NONE
 hi StatusLine   ctermfg=15  guifg=#ffffff ctermbg=239 guibg=#4e4e4e cterm=bold gui=bold
 hi StatusLineNC ctermfg=249 guifg=#b2b2b2 ctermbg=237 guibg=#3a3a3a cterm=none gui=none
+autocmd TermOpen * setlocal nonumber norelativenumber
+"tnoremap <F2> <C-\><C-n>
+:tnoremap <C-w> <C-\><C-n><C-w>
+
+
+" #D8D849 -- possible yellow color (:Man command outputs yellow)
 
 " Aliases
 command Date1 read !date '+\%d \%B \%Y, \%A, Week \%W'
@@ -54,6 +60,7 @@ Plug 'nvim-lua/plenary.nvim'
 "Plug 'preservim/nerdtree'
 "Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 Plug 'mzlogin/vim-markdown-toc'
+"Plug 'vim-scripts/info.vim'
 
 call plug#end()
 

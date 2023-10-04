@@ -1,3 +1,3 @@
 #!/bin/bash
-ln -isv ./mpv/ ~/.config/mpv
-ln -isv ./nvim/ ~/.config/nvim
+ln -isv $(realpath ./mpv/) ~/.config/mpv
+ln -isv $(realpath ./nvim/) ~/.config/nvim
