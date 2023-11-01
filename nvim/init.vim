@@ -12,14 +12,18 @@ highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE gui
 highlight CursorLineNr term=bold cterm=NONE ctermfg=Yellow ctermbg=NONE gui=NONE guifg=Yellow guibg=NONE
 "highlight Cursor guifg=yellow guibg=black
 "highlight CursorLine guibg=NONE ctermbg=NONE
-hi StatusLine   ctermfg=226  guifg=#ffff00 ctermbg=239 guibg=#4e4e4e cterm=bold gui=bold
+"hi StatusLine   ctermfg=226  guifg=#ffff00 ctermbg=239 guibg=#4e4e4e cterm=bold gui=bold
+"hi StatusLineNC ctermfg=249 guifg=#b2b2b2 ctermbg=237 guibg=#3a3a3a cterm=none gui=none
+hi StatusLine   ctermfg=Yellow guifg=Yellow ctermbg=239 guibg=#4e4e4e cterm=bold gui=bold
 hi StatusLineNC ctermfg=249 guifg=#b2b2b2 ctermbg=237 guibg=#3a3a3a cterm=none gui=none
 autocmd TermOpen * setlocal nonumber norelativenumber
 "tnoremap <F2> <C-\><C-n>
-:tnoremap <C-w> <C-\><C-n><C-w>
+":tnoremap <C-w> <C-\><C-n><C-w>
+:tnoremap <Esc> <C-\><C-n>
 
 
 " #D8D849 -- possible yellow color (:Man command outputs yellow)
+" set cterm color to "Yellow"
 
 " Aliases
 command Date1 read !date '+\%d \%B \%Y, \%A, Week \%W'
@@ -63,8 +67,67 @@ Plug 'nvim-lua/plenary.nvim'
 "Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 Plug 'mzlogin/vim-markdown-toc'
 "Plug 'vim-scripts/info.vim'
+"Plug 'smjonas/live-command.nvim'
+
 
 call plug#end()
 
 let g:table_mode_corner='|'
 
+
+
+lua << EOF
+
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
+end
+vim.opt.rtp:prepend(lazypath)
+
+require("lazy").setup({
+  {
+    "willothy/flatten.nvim",
+    config = true,
+    -- or pass configuration with
+    -- opts = {  }
+    -- Ensure that it runs first to minimize delay when opening file from terminal
+    lazy = false,
+    priority = 1001,
+  },
+  --- ...
+})
+
+
+return {
+  "nvim-tree/nvim-tree.lua",
+  version = "*",
+  lazy = false,
+  dependencies = {
+    "nvim-tree/nvim-web-devicons",
+  },
+  config = function()
+    require("nvim-tree").setup {}
+  end,
+}
+
+
+{
+    "nvim-neo-tree/neo-tree.nvim",
+    branch = "v3.x",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+      "MunifTanjim/nui.nvim",
+      -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
+    }
+}
+
+
+EOF
