@@ -19,6 +19,18 @@ autocmd TermOpen * setlocal nonumber norelativenumber
 :tnoremap <C-w> <C-\><C-n><C-w>
 
 
+" Scroll only one line for mouse wheel events to get smooth scrolling on touch screens
+map <ScrollWheelUp> <C-Y>
+imap <ScrollWheelUp> <C-X><C-Y>
+map <ScrollWheelDown> <C-E>
+imap <ScrollWheelDown> <C-X><C-E>
+
+" Allow color schemes to do bright colors without forcing bold.
+if &t_Co == 8 && $TERM !~# '^linux\|^Eterm'
+  set t_Co=16
+endif
+
+
 " #D8D849 -- possible yellow color (:Man command outputs yellow)
 
 " Aliases
