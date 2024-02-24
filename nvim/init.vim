@@ -41,6 +41,9 @@ command Date1 read !date '+\%d \%B \%Y, \%A, Week \%W'
 :augroup END
 
 
+"autocmd BufEnter,BufNewFile *.yaml,*.yml setlocal lcs+=space:·
+autocmd FileType yaml setlocal list | setlocal lcs+=space:·
+
 
 
 " Plugins
