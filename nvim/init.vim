@@ -2,7 +2,7 @@ set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNO
 set ignorecase
 set numberwidth=1
 set mouse =
-set autochdir
+"set autochdir
 set splitbelow splitright
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o "disable autocommenting on newline
 "set shellcmdflag=-ic
@@ -31,6 +31,8 @@ command Date1 read !date '+\%d \%B \%Y, \%A, Week \%W'
 " command CC CopyC
 " deprecated by `%+y`
 "alias date1="date '+%d %B %Y, %A, Week %W'"
+
+"Command LPreview ! xelatex -interaction=nonstopmode %
 
 " Numbers
 :set number
@@ -63,8 +65,8 @@ Plug 'dhruvasagar/vim-table-mode'
 Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
 Plug 'nvim-neo-tree/neo-tree.nvim'
 Plug 'MunifTanjim/nui.nvim'
-Plug 'nvim-tree/nvim-tree.lua'
-Plug 'nvim-tree/nvim-web-devicons'
+"Plug 'nvim-tree/nvim-tree.lua'
+"Plug 'nvim-tree/nvim-web-devicons'
 Plug 'nvim-lua/plenary.nvim'
 "Plug 'preservim/nerdtree'
 "Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
@@ -78,6 +80,8 @@ call plug#end()
 
 let g:table_mode_corner='|'
 let g:unception_block_while_host_edits=1
+let g:livepreview_engine = 'xelatex' . ' [--interaction=nonstopmode] '
+
 
 
 
