@@ -20,8 +20,8 @@ hi StatusLineNC ctermfg=249 guifg=#b2b2b2 ctermbg=237 guibg=#3a3a3a cterm=none g
 
 " hi TabLineFill ctermfg=239 ctermbg=Black guifg=#4e4e4e guibg=#4e4e4e gui=none
 hi TabLineFill ctermfg=237 ctermbg=Black guifg=#4e4e4e guibg=#4e4e4e gui=none
-hi TabLine ctermfg=Yellow ctermbg=239
-hi TabLineSel ctermfg=249 ctermbg=237
+hi TabLineSel ctermfg=Yellow ctermbg=239
+hi TabLine ctermfg=249 ctermbg=237
 
 
 
