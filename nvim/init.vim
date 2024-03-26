@@ -14,8 +14,16 @@ highlight CursorLineNr term=bold cterm=NONE ctermfg=Yellow ctermbg=NONE gui=NONE
 "highlight CursorLine guibg=NONE ctermbg=NONE
 "hi StatusLine   ctermfg=226  guifg=#ffff00 ctermbg=239 guibg=#4e4e4e cterm=bold gui=bold
 "hi StatusLineNC ctermfg=249 guifg=#b2b2b2 ctermbg=237 guibg=#3a3a3a cterm=none gui=none
+
 hi StatusLine   ctermfg=Yellow guifg=Yellow ctermbg=239 guibg=#4e4e4e cterm=bold gui=bold
 hi StatusLineNC ctermfg=249 guifg=#b2b2b2 ctermbg=237 guibg=#3a3a3a cterm=none gui=none
+
+" hi TabLineFill ctermfg=239 ctermbg=Black guifg=#4e4e4e guibg=#4e4e4e gui=none
+hi TabLineFill ctermfg=Black ctermbg=Black guifg=#4e4e4e guibg=#4e4e4e gui=none
+hi TabLine ctermfg=Yellow ctermbg=239
+hi TabLineSel ctermfg=249 ctermbg=237
+
+
 autocmd TermOpen * setlocal nonumber norelativenumber
 "tnoremap <F2> <C-\><C-n>
 ":tnoremap <C-w> <C-\><C-n><C-w>
@@ -81,7 +89,3 @@ call plug#end()
 let g:table_mode_corner='|'
 let g:unception_block_while_host_edits=1
 let g:livepreview_engine = 'xelatex' . ' [--interaction=nonstopmode] '
-
-
-
-
