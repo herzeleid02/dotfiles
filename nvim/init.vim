@@ -62,7 +62,7 @@ call plug#begin()
 
 "call plug#begin('~/.config/nvim/plugged')
 Plug 'dhruvasagar/vim-table-mode'
-Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
+"Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
 Plug 'nvim-neo-tree/neo-tree.nvim'
 Plug 'MunifTanjim/nui.nvim'
 "Plug 'nvim-tree/nvim-tree.lua'
