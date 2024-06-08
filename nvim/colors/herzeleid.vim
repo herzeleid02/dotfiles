@@ -9,6 +9,9 @@ if exists("syntax_on")
   syntax reset
 endif
 
+runtime colors/vim.lua
+let g:colors_name = "herzeleid"
+
 
 highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
 highlight CursorLineNr term=bold cterm=NONE ctermfg=Yellow ctermbg=NONE gui=NONE guifg=Yellow guibg=NONE

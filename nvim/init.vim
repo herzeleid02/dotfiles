@@ -11,6 +11,7 @@ set cursorlineopt=number
 
 "my colorscheme was moved to `./colors/herzeleid.vim`
 colorscheme herzeleid
+set notermguicolors "for nvim 0.10.0
 
 
 
