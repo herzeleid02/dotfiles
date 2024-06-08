@@ -74,9 +74,10 @@ Plug 'mzlogin/vim-markdown-toc'
 "Plug 'vim-scripts/info.vim'
 "Plug 'smjonas/live-command.nvim'
 Plug 'samjwill/nvim-unception'
-
-
+Plug 'ujihisa/tabpagecolorscheme' " individual color schemes for tabs
 call plug#end()
+
+"Tcolorscheme herzeleid " weird hack for tabpagecolorscheme
 
 let g:table_mode_corner='|'
 let g:unception_block_while_host_edits=1
