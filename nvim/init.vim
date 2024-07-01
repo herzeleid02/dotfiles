@@ -14,11 +14,12 @@ colorscheme herzeleid
 set notermguicolors "for nvim 0.10.0
 
 
-
 autocmd TermOpen * setlocal nonumber norelativenumber
+autocmd TermOpen * map <A-e> a<A-e>
 "tnoremap <F2> <C-\><C-n>
 ":tnoremap <C-w> <C-\><C-n><C-w>
 :tnoremap <Esc> <C-\><C-n>
+
 
 
 " #D8D849 -- possible yellow color (:Man command outputs yellow)
@@ -75,7 +76,7 @@ Plug 'mzlogin/vim-markdown-toc'
 "Plug 'vim-scripts/info.vim'
 "Plug 'smjonas/live-command.nvim'
 Plug 'samjwill/nvim-unception'
-Plug 'ujihisa/tabpagecolorscheme' " individual color schemes for tabs
+"Plug 'ujihisa/tabpagecolorscheme' " individual color schemes for tabs
 call plug#end()
 
 "Tcolorscheme herzeleid " weird hack for tabpagecolorscheme
